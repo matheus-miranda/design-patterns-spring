@@ -1,6 +1,7 @@
 package com.dio.patterns.model;
 
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -11,15 +12,25 @@ import jakarta.persistence.Id;
 public class Address {
 
     @Id
+    @JsonAlias("cep")
     private String zipcode;
+    @JsonAlias("logradouro")
     private String street;
+    @JsonAlias("complemento")
     private String complement;
+    @JsonAlias("bairro")
     private String district;
+    @JsonAlias("localidade")
     private String location;
+    @JsonAlias("uf")
     private String state;
+    @JsonAlias("ibge")
     private String ibge;
+    @JsonAlias("gia")
     private String gia;
+    @JsonAlias("ddd")
     private String ddd;
+    @JsonAlias("siafi")
     private String siafi;
 
     public String getZipcode() {
